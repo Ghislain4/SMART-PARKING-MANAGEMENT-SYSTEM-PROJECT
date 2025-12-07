@@ -1,0 +1,23 @@
+smart-parking-management/
+│
+├── README.md                   # Professional README (we created)
+├── LICENSE                     # MIT License file
+├── .gitignore                  # Ignore unnecessary files
+│
+├── database/                   # Database-related scripts
+│   ├── create_tables.sql       # SQL script to create all tables
+│   ├── insert_sample_data.sql  # Optional sample data
+│   ├── audit_policies.sql      # SQL script for audit policies
+│   └── grant_privileges.sql    # SQL script for user roles & privileges
+│
+├── images/                     # Placeholder for diagrams/screenshots
+│   ├── er-diagram-placeholder.png
+│   ├── system-architecture-placeholder.png
+│   └── audit-report-placeholder.png
+│
+├── scripts/                    # Optional application scripts
+│   ├── example_crud.sql        # Example PL/SQL procedures for CRUD
+│   └── reports.sql             # Sample queries for reports
+│
+└── docs/                       # Optional documentation
+    └── user_manual.md          # User manual or instructions
