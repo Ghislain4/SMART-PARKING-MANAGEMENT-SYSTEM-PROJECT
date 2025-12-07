@@ -73,3 +73,31 @@ The system follows a **three-layer architecture**:
 | `USER`           | Stores user credentials, roles, and permissions. |
 
 ### ER Diagram (Simplified)
+
+---
+
+## Audit Policies
+
+SPMS leverages **Oracle Unified Audit Policies** for secure and compliant logging.
+
+1. **Session Audit Policy**: `spm_session_audit`  
+   - Tracks all user logons and logoffs.  
+
+2. **DML Audit Policy**: `spm_dml_audit`  
+   - Audits all **INSERT, UPDATE, DELETE** operations on critical tables (`PARKINGSLOT`, `VEHICLE`, etc.).  
+
+### Example SQL
+```sql
+-- Create session audit policy
+CREATE AUDIT POLICY spm_session_audit
+  ACTIONS LOGON, LOGOFF;
+
+-- Create DML audit policy
+CREATE AUDIT POLICY spm_dml_audit
+  ACTIONS INSERT, UPDATE, DELETE
+  ON smartparking.parkingslot;
+
+-- Enable policies
+AUDIT POLICY spm_session_audit;
+AUDIT POLICY spm_dml_audit;
+
